@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LocateIP</title>
+</head>
+<body>
+    <form action="/tracker" method="post">
+        <input type="text" placeholder="Enter IP address or domain name" name="ip_input">
+        <input type="submit" value=">">
+    </form>
+    <a href="/refresh">Refresh</a>
+    {% if data is defined and data.code != 422 %}
+        {% if request_method == 'GET' %}
+            <p>Your IP address is {{data.ip}}</p>
+            <p>Location is {{data.location.region}}, {{data.location.country}}</p>
+            <p>Timezone: UTC {{data.location.timezone}}</p>
+            <p>ISP: {{data.isp}}</p>
+        {% elif request_method == 'POST' %}
+            <p>Your entered IP address is {{data.ip}}</p>
+            <p>Location is {{data.location.region}}, {{data.location.country}}</p>
+            <p>Timezone: UTC {{data.location.timezone}}</p>
+            <p>ISP: {{data.isp}}</p>
+        {% endif %}
+    {% else %}
+        <p>IP not found</p>
+    {% endif %}
+</body>
+</html>
