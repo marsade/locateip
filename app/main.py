@@ -14,7 +14,8 @@ api_key = 'at_j8RdjZzkypr6I4XbJmSjafMq5pV4N'
 @app.route('/', strict_slashes=False)
 def home():
     """Index page for application"""
-    return render_template('index.html')
+    cache_id = str(uuid.uuid4())
+    return render_template('index.html', cache_id=cache_id)
 
 
 @app.route('/refresh')
@@ -27,7 +28,7 @@ def refresh():
 @app.route('/tracker', strict_slashes=False, methods=['GET', 'POST'])
 def tracker():
     '''Tracker page for application'''
-    
+    cache_id = str(uuid.uuid4())
     if 'ip_address' in session:
         ip_address = session['ip_address']
     else:
@@ -66,6 +67,6 @@ def tracker():
             base_url = f'{api_url}?apiKey={api_key}'
         result = requests.get(base_url)
         data =  result.json()
-        return render_template('tracker.html', data=data, request_method=request.method)    
+        return render_template('tracker.html', data=data, request_method=request.method, cache_id=cache_id)    
     except requests.RequestException as e:
         print(f"Error fetching data: {e}")
