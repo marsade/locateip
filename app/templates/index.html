@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/css/style.css')}}?cache_id={{cache_id}}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap?cache_id={{cache_id}}" rel="stylesheet">
+    <title>LocateIP</title>
+</head>
+<body>
+   <nav>
+    <div class="logo">
+        <img src="{{ url_for('static', filename='imgs/png/logo-removebg.png') }}?cache_id={{cache_id}}" alt="">
+    </div>
+    <div class="nav">
+        <ul class="navbar-links">
+            <li><a href="#about.html">About</a></li>                 
+            <li><a href="#features.html">Contact Us</a></li>
+        </ul>
+    </div>
+    <div class="menu-btn">
+        <i class="fa-solid fa-bars fa-2xl"></i>
+    </div>
+   </nav>
+   <section id="landing">
+    <div class="banner">
+        <h2>Explore the World Behind Every IP!</h2>
+        <img src="{{url_for('static', filename='imgs/png/map.png')}}?cache_id={{cache_id}}" alt="">
+    </div>
+    <div class="cta">
+        <a href="/tracker">Track Now</a>
+    </div>
+   </section>
+   <section id="info">
+    <div class="info-text">
+        <h2>Say Hello to LocateIP</h2>
+        <p>LocateIP quickly and accurately provides actionable insight, whether you're keeping tabs on network traffic, looking into cybersecurity issues, or just inquisitive about the source of online interactions. With LocateIP, discover the endless possibilities of location-based data like never before and open up a world of opportunities.</p>
+    </div>
+    <div class="gif">
+        <img src="{{url_for('static', filename='imgs/gif/navigation.gif')}}?cache_id={{cache_id}}" alt="Navigation GIF">
+    </div>
+   </section>
+   <section id="features">
+    <div class="ft-text">
+        <h2>LocateIp's Best Features</h2>
+        <p>Take a look at our most talked about features, with more to come!</p>
+    </div>
+    <div class="features-list">
+        <div class="ft-item">
+            <p>1.</p>
+            <p>Ip Address Tracking: You can enter an IP address and view its geographical location on a map.</p>
+        </div>
+        <div class="ft-item">
+            <p>2.</p>
+            <p>Customizable Map View: Zoom in or out and switch between different styles</p>
+        </div>
+        <div class="ft-item">
+            <p>3.</p>
+            <p>Timezone Display: View the timezone of the entered Ip Address</p>
+        </div>
+    </div>
+   </section>
+   <section id="about"></section>
+   <section id="footer"></section>
+   <script src="https://kit.fontawesome.com/c796ad0f18.js" crossorigin="anonymous"></script>
+</body>
+</html>
