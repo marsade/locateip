@@ -16,12 +16,9 @@
     </div>
     <div class="nav">
         <ul class="navbar-links">
-            <li><a href="#about.html">About</a></li>                 
+            <li><a href="#about">About</a></li>                 
             <li><a href="#features.html">Contact Us</a></li>
         </ul>
-    </div>
-    <div class="menu-btn">
-        <i class="fa-solid fa-bars fa-2xl"></i>
     </div>
    </nav>
    <section id="landing">
@@ -43,27 +40,42 @@
     </div>
    </section>
    <section id="features">
-    <div class="ft-text">
-        <h2>LocateIp's Best Features</h2>
-        <p>Take a look at our most talked about features, with more to come!</p>
+    <div class="ft-container">
+        <div class="ft-text">
+            <h2>LocateIp's Best Features</h2>
+            <p>Take a look at our most talked about features, with more to come!</p>
+        </div>
+        <div class="features-list">
+            <div class="ft-item ft-item-one">
+                <span>1</span>
+                <p>Ip Address Tracking: You can enter an IP address and view its geographical location on a map.</p>
+            </div>
+            <div class="ft-item ft-item-two">
+                <span>2</span>
+                <p>Customizable Map View: Zoom in or out and switch between different map styles</p>
+            </div>
+            <div class="ft-item ft-item-three">
+                <span>3</span>
+                <p>Timezone Display: View the timezone of the entered Ip Address</p>
+            </div>
+        </div>
     </div>
-    <div class="features-list">
-        <div class="ft-item">
-            <p>1.</p>
-            <p>Ip Address Tracking: You can enter an IP address and view its geographical location on a map.</p>
-        </div>
-        <div class="ft-item">
-            <p>2.</p>
-            <p>Customizable Map View: Zoom in or out and switch between different styles</p>
-        </div>
-        <div class="ft-item">
-            <p>3.</p>
-            <p>Timezone Display: View the timezone of the entered Ip Address</p>
-        </div>
+    <div class="cta">
+        <a href="/tracker">Try it Now</a>
     </div>
    </section>
-   <section id="about"></section>
-   <section id="footer"></section>
+   <section id="about">
+    <div class="svg">
+        <img src="{{url_for('static', filename='imgs/svg/team.svg')}}?cache_id={{cache_id}}" alt="">
+    </div>
+    <div class="about-text">
+        <h2>A Little About LocateIP</h2>
+        <p>LocateIP was inspired by a need for a challenge and a need for a fun way to pass time on the internet. But since then, it has grown into a passion and something to be devoted to developing and improving. Noticed a bug or interested in contributing? You can find the repository on a
+        <a href="https://github.com/marsade/locateip">github</a></p>
+        <p>Built by Omofaramade Adeniji (Mars) - a little too curious of a developer who’s passionate about anything tech related. Find me on <a href="https://github.com/marsade/">github</a>, <a href="https://twitter.com/marsthegr8">twitter</a> or challenge me to a game of <a href="https://www.chess.com/member/wtfmars">chess</a>!</p>
+    </div>
+   </section>
+   <section id="footer"><a href="https://storyset.com/people">People illustrations by Storyset</a> and built with ❤️    </section>
    <script src="https://kit.fontawesome.com/c796ad0f18.js" crossorigin="anonymous"></script>
 </body>
 </html>
