@@ -1,5 +1,6 @@
 * {
 	margin: 0;
+	padding: 0;
 	box-sizing: border-box;
 }
 html{
@@ -31,13 +32,14 @@ nav {
 		}
 	}
 	.nav {
-		// visibility: hidden;
+		visibility: hidden;
 	}
 }
 #landing{
 	background-color: #22223d;
 	display: flex;
 	flex-direction: column;
+	justify-content: space-between;
 	align-items: center;
 	padding: 30px 30px;
 	color: #ffffff;
@@ -92,5 +94,121 @@ nav {
 	}
 }
 #features {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 30px 20px;
 
+	h2 {
+		font-size: 1.7rem;
+		color: #0a1a44;
+		font-weight: 300;
+		margin-bottom: 15px;
+	}
+	p {
+		color: #0a1a44;
+		font-size: 1rem;
+		margin-bottom: 15px;
+	}
+	.features-list {
+		margin-top: 10px;
+	}
+	.ft-item {
+		padding: 30px;
+		height: 180px;
+		&-one{
+			background-color:#22223d;
+			p {
+				color: #fff;
+			}
+		}
+		&-two{
+			background-color: #778da9;
+			p{
+				color: #071332;
+			}
+		}
+		&-three{
+			background-color: #acb7c3;
+			p{
+				color: #071332;
+			}
+		}
+	}
+	span	 {
+		background-color: #b3e9c7;
+		border-radius: 50%;
+		padding: 1px 10px 3px 10px;
+	}
+	.ft-item p {
+		margin-top: 15px;
+	}
+	.cta {
+		margin: 25px 0;
+		a {
+			color: #000000;
+			text-decoration: none;
+			padding: 10px 30px;
+			background-color: #b3e9c7;
+			border-radius: 40px;
+			font-size: 1rem;
+		}
+	}
+}
+#about{
+	display: flex;
+	flex-direction: column;
+	padding: 30px 20px;
+
+	h2 {
+		font-size: 1.7rem;
+		color: #0a1a44;
+		font-weight: 300;
+		margin-bottom: 15px;
+	}
+}
+#footer {
+	padding: 30px 20px;
+	text-align: center;
+}
+
+@media (min-width: 768px) {
+	html {
+		font-size: 20px;
+	}
+	#landing 
+	{
+		.banner h2 {
+			font-size: 2.1rem;
+		}
+		img {
+			padding: 10px 50px;
+		}
+		.cta a {
+			font-size: 1.2rem;
+			padding: 10px 50px;
+			margin-bottom: 30px;
+		}
+	} 
+	#info {
+		padding: 50px 60px 0;
+		img {
+			padding: 30px;
+		}
+	}
+	#features {
+		padding: 50px 60px 0;
+		img {
+			padding: 50px;
+		}
+		.cta a {
+			font-size: 1.2rem;
+			padding: 10px 50px;
+			margin: 50px 0;
+		}
+	}
+	#about {
+		padding: 50px 60px 0;
+	}
 }

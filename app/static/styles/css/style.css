@@ -1,5 +1,6 @@
 * {
   margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
@@ -32,10 +33,15 @@ nav .navbar-links a {
   text-decoration: none;
   color: black;
 }
+nav .nav {
+  visibility: hidden;
+}
+
 #landing {
   background-color: #22223d;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   padding: 30px 30px;
   color: #ffffff;
@@ -85,4 +91,121 @@ nav .navbar-links a {
 #info img {
   padding: 10px;
   width: 100%;
+}
+
+#features {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 20px;
+}
+#features h2 {
+  font-size: 1.7rem;
+  color: #0a1a44;
+  font-weight: 300;
+  margin-bottom: 15px;
+}
+#features p {
+  color: #0a1a44;
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+#features .features-list {
+  margin-top: 10px;
+}
+#features .ft-item {
+  padding: 30px;
+  height: 180px;
+}
+#features .ft-item-one {
+  background-color: #22223d;
+}
+#features .ft-item-one p {
+  color: #fff;
+}
+#features .ft-item-two {
+  background-color: #778da9;
+}
+#features .ft-item-two p {
+  color: #071332;
+}
+#features .ft-item-three {
+  background-color: #acb7c3;
+}
+#features .ft-item-three p {
+  color: #071332;
+}
+#features span {
+  background-color: #b3e9c7;
+  border-radius: 50%;
+  padding: 1px 10px 3px 10px;
+}
+#features .ft-item p {
+  margin-top: 15px;
+}
+#features .cta {
+  margin: 25px 0;
+}
+#features .cta a {
+  color: #000000;
+  text-decoration: none;
+  padding: 10px 30px;
+  background-color: #b3e9c7;
+  border-radius: 40px;
+  font-size: 1rem;
+}
+
+#about {
+  display: flex;
+  flex-direction: column;
+  padding: 30px 20px;
+}
+#about h2 {
+  font-size: 1.7rem;
+  color: #0a1a44;
+  font-weight: 300;
+  margin-bottom: 15px;
+}
+
+#footer {
+  padding: 30px 20px;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 20px;
+  }
+  #landing .banner h2 {
+    font-size: 2.1rem;
+  }
+  #landing img {
+    padding: 10px 50px;
+  }
+  #landing .cta a {
+    font-size: 1.2rem;
+    padding: 10px 50px;
+    margin-bottom: 30px;
+  }
+  #info {
+    padding: 50px 60px 0;
+  }
+  #info img {
+    padding: 30px;
+  }
+  #features {
+    padding: 50px 60px 0;
+  }
+  #features img {
+    padding: 50px;
+  }
+  #features .cta a {
+    font-size: 1.2rem;
+    padding: 10px 50px;
+    margin: 50px 0;
+  }
+  #about {
+    padding: 50px 60px 0;
+  }
 }/*# sourceMappingURL=style.css.map */
