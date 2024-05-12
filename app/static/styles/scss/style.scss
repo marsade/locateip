@@ -282,7 +282,13 @@ nav {
 }
 @media (min-width: 1280px){
 	html{
-		font-size: 32px;
+		font-size: 26px;
+	}
+	.logo img {
+		height: 30px;
+	}
+	.nav {
+		width: 200px;
 	}
 	.navbar-links {
 		display: flex !important;
@@ -296,6 +302,8 @@ nav {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 		position: relative;
+		column-gap: 80px;
+		padding-top: 0;
 
 		h2 {
 			text-align: left;
@@ -303,6 +311,7 @@ nav {
 		}
 		img {
 			padding: 0;
+			
 		}
 		.cta {
 			justify-self: stretch;
@@ -318,10 +327,22 @@ nav {
 	#info {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
-		column-gap: 5px;
+		column-gap: 50px;
 		margin-top: 50px;
+		.gif{
+			justify-self: center;
+		}
+		.info-text {
+			align-self: center;
+		}
 		img {
 			padding: 0;
+			width: 100%;
+			height: 100%;
+		}
+		p{
+			font-size: 0.8rem;
+			line-height: 1.3rem;
 		}
 	}
 	#features {
@@ -333,10 +354,14 @@ nav {
                   column-gap: 5px;
 		}
 		.ft-item{
-			height: 350px;
+			height: 250px;
 		}
 		.cta a {
 			font-size: 0.8rem;
+		}
+		p{
+			font-size: 0.8rem;
+			line-height: 1.3rem;
 		}
 	}
 	#about {
@@ -345,7 +370,19 @@ nav {
             column-gap: 15px;
             margin-top: 50px;
             img {
-                  padding: 0;
-            }
+			padding: 0;
+			width: 100%;
+			height: 100%;
+		}
+		p{
+			font-size: 0.8rem;
+			line-height: 1.3rem;
+		}
+		.about-text {
+			align-self: center;
+		}
+	}
+	#footer {
+		font-size: 0.8rem;
 	}
 }
