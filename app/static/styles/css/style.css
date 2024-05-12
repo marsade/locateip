@@ -161,6 +161,7 @@ nav .nav {
   display: flex;
   flex-direction: column;
   padding: 30px 20px;
+  margin-bottom: 50px;
 }
 #about h2 {
   font-size: 1.7rem;
@@ -277,9 +278,18 @@ nav .nav {
   html {
     font-size: 32px;
   }
+  .navbar-links {
+    display: flex !important;
+    justify-content: space-between;
+  }
+  .navbar-links li a {
+    color: #fff;
+    font-size: 0.8rem;
+  }
   #landing {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    position: relative;
   }
   #landing h2 {
     text-align: left;
@@ -288,8 +298,50 @@ nav .nav {
   #landing img {
     padding: 0;
   }
-  #landing .cta a {
+  #landing .cta {
     justify-self: stretch;
-    font-size: 0.7rem;
+    position: absolute;
+    top: 65%;
+    left: 50px;
+  }
+  #landing .cta a {
+    font-size: 0.8rem;
+    padding: 15px 80px;
+  }
+  #info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    -moz-column-gap: 5px;
+         column-gap: 5px;
+    margin-top: 50px;
+  }
+  #info img {
+    padding: 0;
+  }
+  #features {
+    margin-top: 50px;
+  }
+  #features .features-list {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    -moz-column-gap: 5px;
+         column-gap: 5px;
+  }
+  #features .ft-item {
+    height: 350px;
+  }
+  #features .cta a {
+    font-size: 0.8rem;
+  }
+  #about {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    -moz-column-gap: 15px;
+         column-gap: 15px;
+    margin-top: 50px;
+  }
+  #about img {
+    padding: 0;
   }
 }/*# sourceMappingURL=style.css.map */
