@@ -218,10 +218,8 @@ nav {
 	html{
 		font-size: 26px;
 	}
-	.logo {
-		img {
-			height: 45px;
-		}
+	.logo img {
+		height: 30px;
 	}
 	.nav {
 		visibility: visible !important;
@@ -233,6 +231,7 @@ nav {
 		justify-content: space-between;
 		li a{
 			color: #fff;
+			font-size: 0.8rem;
 		}
 	}
 	#landing 
@@ -242,7 +241,7 @@ nav {
 			padding: 20px 100px;
 		}
 		.cta a {
-			font-size: 1.2rem;
+			font-size: 0.8rem;
 			padding: 10px 50px;
 			margin-bottom: 30px;
 		}
@@ -251,6 +250,10 @@ nav {
 		padding: 50px 80px 0;
 		img {
 			padding: 50px 70px 30px;
+		}
+		p{
+			font-size: 0.8rem;
+			line-height: 1.3rem;
 		}
 	}
 	#features {
@@ -267,10 +270,14 @@ nav {
 			margin-bottom: 20px;
 		}
 		.ft-item {
-			height: 250px;
+			height: 200px;
 		}
 		span {
 			padding: 1px 15px 3px;
+		}
+		p{
+			font-size: 0.8rem;
+			line-height: 1.3rem;
 		}
 	}
 	#about {
@@ -278,6 +285,13 @@ nav {
 		img {
 			padding: 50px 70px 30px;
 		}
+		p{
+			font-size: 0.8rem;
+			line-height: 1.3rem;
+		}
+	}
+	#footer {
+		font-size: 0.8rem;
 	}
 }
 @media (min-width: 1280px){

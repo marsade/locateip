@@ -216,7 +216,7 @@ nav .nav {
     font-size: 26px;
   }
   .logo img {
-    height: 45px;
+    height: 30px;
   }
   .nav {
     visibility: visible !important;
@@ -229,6 +229,7 @@ nav .nav {
   }
   .navbar-links li a {
     color: #fff;
+    font-size: 0.8rem;
   }
   #landing {
     padding: 45px;
@@ -237,7 +238,7 @@ nav .nav {
     padding: 20px 100px;
   }
   #landing .cta a {
-    font-size: 1.2rem;
+    font-size: 0.8rem;
     padding: 10px 50px;
     margin-bottom: 30px;
   }
@@ -246,6 +247,10 @@ nav .nav {
   }
   #info img {
     padding: 50px 70px 30px;
+  }
+  #info p {
+    font-size: 0.8rem;
+    line-height: 1.3rem;
   }
   #features {
     padding: 50px 80px 0;
@@ -262,16 +267,27 @@ nav .nav {
     margin-bottom: 20px;
   }
   #features .ft-item {
-    height: 250px;
+    height: 200px;
   }
   #features span {
     padding: 1px 15px 3px;
+  }
+  #features p {
+    font-size: 0.8rem;
+    line-height: 1.3rem;
   }
   #about {
     padding: 50px 80px 0;
   }
   #about img {
     padding: 50px 70px 30px;
+  }
+  #about p {
+    font-size: 0.8rem;
+    line-height: 1.3rem;
+  }
+  #footer {
+    font-size: 0.8rem;
   }
 }
 @media (min-width: 1280px) {
