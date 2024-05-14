@@ -3,28 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LocateIP</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/css/tracker.css')}}?cache_id={{cache_id}}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap?cache_id={{cache_id}}" rel="stylesheet">
+    <script src="{{ url_for('static', filename='js/app.js')}}?cache_id={{cache_id}}" defer></script>
+    <title>LocateIP - Tracker</title>
 </head>
 <body>
-    <form action="/tracker" method="post">
-        <input type="text" placeholder="Enter IP address or domain name" name="ip_input">
-        <input type="submit" value=">">
-    </form>
-    <a href="/refresh">Refresh</a>
-    {% if data is defined and data.code != 422 %}
-        {% if request_method == 'GET' %}
-            <p>Your IP address is {{data.ip}}</p>
-            <p>Location is {{data.location.region}}, {{data.location.country}}</p>
-            <p>Timezone: UTC {{data.location.timezone}}</p>
-            <p>ISP: {{data.isp}}</p>
-        {% elif request_method == 'POST' %}
-            <p>Your entered IP address is {{data.ip}}</p>
-            <p>Location is {{data.location.region}}, {{data.location.country}}</p>
-            <p>Timezone: UTC {{data.location.timezone}}</p>
-            <p>ISP: {{data.isp}}</p>
-        {% endif %}
-    {% else %}
-        <p>IP not found</p>
-    {% endif %}
+    <div id="header-form">
+        <a href="/"> <img src="{{ url_for('static', filename='imgs/png/logo-removebg.png') }}?cache_id={{cache_id}}" alt="locate-ip-logo"></a>
+        <div>
+            <form action="/tracker" method="post">
+                <input type="text" placeholder="Enter IP address or domain" name="ip_input">
+                <input type="submit" value=">">
+            </form>
+            <button type="submit">
+                <a href="/refresh"><i class="fa-solid fa-arrows-rotate fa-xl"></i></a>
+            </button>
+        </div>
+        <div id="ip-info">
+            {% if data is defined and data.code != 422 %}
+                {% if request_method == 'GET' %}
+                    <div class="ip-address info">
+                        <p>IP Address</p>
+                        <p>{{data.ip}}</p>
+                    </div>
+                    <div class="location info">
+                        <p>Location</p>
+                        <p>{{data.location.city}}, {{data.location.region}}, {{data.location.country}}</p>
+                    </div>
+                    <div class="timezone info">
+                        <p>Timezone</p>
+                        <p>UTC {{data.location.timezone}}</p>
+                    </div>
+                    <div class="isp info">
+                        <p>ISP</p>
+                        <p>{{data.isp}}</p>
+                    </div>
+                {% elif request_method == 'POST' %}
+                    <div class="ip-address info">
+                        <p>IP Address</p>
+                        <p>{{data.ip}}</p>
+                    </div>
+                    <div class="location info">
+                        <p>Location</p>
+                        <p>{{data.location.city}}, {{data.location.region}}, {{data.location.country}}</p>
+                    </div>
+                    <div class="timezone info">
+                        <p>Timezone</p>
+                        <p>UTC {{data.location.timezone}}</p>
+                    </div>
+                    <div class="isp info">
+                        <p>ISP</p>
+                        <p>{{data.isp}}</p>
+                    </div>
+                {% endif %}
+            {% else %}
+                <div class="ip-address info">
+                    <p>IP Address</p>
+                    <p>Not Found</p>
+                </div>
+                <div class="location info">
+                    <p>Location</p>
+                    <p>Not Found</p>
+                </div>
+                <div class="timezone info">
+                    <p>Timezone</p>
+                    <p>Not Found}</p>
+                </div>
+                <div class="isp info">
+                    <p>ISP</p>
+                    <p>Not Found</p>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+    <div class="location" style="display: none;">
+        <p class="lat">{{data.location.lat}}6</p>
+        <p class="long">{{data.location.lng}}</p>
+    </div>
+    <div id="map-container">
+        <div id="map">
+        </div>
+    </div>
+    <script src="https://kit.fontawesome.com/c796ad0f18.js" crossorigin="anonymous"></script>
 </body>
 </html>
