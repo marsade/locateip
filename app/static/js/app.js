@@ -53,6 +53,7 @@ function sendIPAddressToBackend(ipAddress) {
   .then(response => {
       if (response.ok) {
           console.log('IP address sent to backend successfully');
+          window.location.href = '/tracker';
       } else {
           console.error('Failed to send IP address to backend');
       }
