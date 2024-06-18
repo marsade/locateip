@@ -24,25 +24,25 @@ def refresh():
     user_ip = session.get('extracted_user_ip')
     # Redirect to tracker with query parameter if user's IP is available
     if user_ip:
+        print('refresh ip:', user_ip)
         return redirect(url_for('tracker', ip=user_ip))
     else:
         # Redirect without query parameter if user's IP is not available
         return redirect(url_for('tracker'))
 
 @app.route('/tracker', strict_slashes=False, methods=['GET' ])
-def tracker():
+def tracker(ip=None, domain=None):
     '''Tracker page for application'''
     cache_id = str(uuid.uuid4())
-    ip_address = session.get('extracted_user_ip')# Get IP from query parameter or session
-
-    domain_name = session.get('extracted_domain')
+    ip_address = ip
+    domain_name = domain
     user_ip = session.get('extracted_user_ip')
     print('Ip Address:', ip_address)
     print('Domain Name:', domain_name)
     print('user_ip:', user_ip)
 
-    if not ip_address and not domain_name:
-        return render_template('tracker.html', data=None,cache_id=cache_id)
+    if not ip_address and not domain_name and not user_ip:
+        return render_template('tracker.html', data=None, cache_id=cache_id)
     try:
         if ip_address:
             base_url = f'{api_url}?apiKey={api_key}&ipAddress={ip_address}'
@@ -50,6 +50,7 @@ def tracker():
             base_url = f'{api_url}?apiKey={api_key}&domain={domain_name}'
         else:
             base_url = f'{api_url}?apiKey={api_key}&ipAddress={user_ip}'
+        print(base_url)
         result = requests.get(base_url)
         data =  result.json()
         if 'code' in data:
@@ -89,7 +90,7 @@ def extract_ip():
         # Handle JSON request
         ip_input = request.json.get('ip_address')
         ip_address = ip_input
-        session['extracted_user_ip'] = ip_address
+        session['extracted_user_ip'] = ip_address   
     
     session['extracted_ip'] = ip_address
     session['extracted_domain'] = domain_name
@@ -101,11 +102,11 @@ def extract_ip():
     ext = session.get('extracted_user_ip')
     if ext:
         print('Received User Ip:', session['extracted_user_ip'])
-    return redirect(url_for('tracker'))
+    return redirect(url_for('tracker', ip=ip_address, domain=domain_name))
 
 @app.route('/get_extracted_ip', methods=['GET'])
 def get_extracted_ip():
-    # Assuming you have stored the extracted IP address in a session variable
+    # Assuming extracted IP address is not in a session variable
     extracted_ip = session.get('extracted_ip')
     extracted_domain = session.get('extracted_domain')
     user_ip = session.get('extracted_user_ip')

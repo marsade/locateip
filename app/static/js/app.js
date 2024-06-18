@@ -1,9 +1,10 @@
 // Latitude and longitude for leaflet
-let reload = true
-if (reload) {
-  window.location = window.location
-  reload = false
-}
+// let reload = true
+// if (reload) {
+//   window.location = window.location
+//   reload = false
+// }
+
 
 function fetchIPAddress() {
   // Fetch the extracted IP address from the backend
@@ -51,7 +52,6 @@ function sendIPAddressToBackend(ipAddress) {
   })
   .then(response => {
       if (response.ok) {
-
           console.log('IP address sent to backend successfully');
       } else {
           console.error('Failed to send IP address to backend');
