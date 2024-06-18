@@ -31,11 +31,11 @@ def refresh():
         return redirect(url_for('tracker'))
 
 @app.route('/tracker', strict_slashes=False, methods=['GET' ])
-def tracker(ip=None, domain=None):
+def tracker():
     '''Tracker page for application'''
     cache_id = str(uuid.uuid4())
-    ip_address = ip
-    domain_name = domain
+    ip_address = request.args.get('ip')
+    domain_name = request.args.get('domain')
     user_ip = session.get('extracted_user_ip')
     print('Ip Address:', ip_address)
     print('Domain Name:', domain_name)
