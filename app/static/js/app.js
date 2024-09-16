@@ -1,11 +1,3 @@
-// Latitude and longitude for leaflet
-// let reload = true
-// if (reload) {
-//   window.location = window.location
-//   reload = false
-// }
-
-
 function fetchIPAddress() {
   // Fetch the extracted IP address from the backend
   fetch('/get_extracted_ip')
@@ -18,11 +10,10 @@ function fetchIPAddress() {
         // Exit the function here since we already have the IP address
         return;
       }
-      else {
+    else {
         FetchAndSendIpAddress();
-      }})
-    };
-
+    }})
+};
 
 function FetchAndSendIpAddress(){
   fetch('/proxy?url=https://api.ipify.org?format=json')
@@ -38,7 +29,6 @@ function FetchAndSendIpAddress(){
             console.error('Error fetching IP address:', error);
         });
 }
-// Call the function to fetch the IP address 
 // Function to send the IP address to the Flask backend
 function sendIPAddressToBackend(ipAddress) {
   const requestData = { ip_address: ipAddress };

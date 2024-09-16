@@ -8,7 +8,7 @@ app = Flask(__name__)
 app.secret_key = str(uuid.uuid4())
 
 api_url = 'https://geo.ipify.org/api/v2/country,city'
-api_key = 'at_j8RdjZzkypr6I4XbJmSjafMq5pV4N'
+api_key = 'at_yIPGeKoiMSoTJaoxpCt1HKJK9X3Iw'
 
 
 @app.route('/', strict_slashes=False)
@@ -30,13 +30,13 @@ def refresh():
         # Redirect without query parameter if user's IP is not available
         return redirect(url_for('tracker'))
 
-@app.route('/tracker', strict_slashes=False, methods=['GET' ])
+@app.route('/tracker', strict_slashes=False, methods=['GET'])
 def tracker():
     '''Tracker page for application'''
     cache_id = str(uuid.uuid4())
     ip_address = request.args.get('ip')
     domain_name = request.args.get('domain')
-    user_ip = session.get('extracted_user_ip')
+    user_ip = request.remote_addr
     print('Ip Address:', ip_address)
     print('Domain Name:', domain_name)
     print('user_ip:', user_ip)
