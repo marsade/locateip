@@ -28,10 +28,12 @@ Users should be able to:
 - CSS3
 - JavaScript
 ### Code Snippets
-<a href='https://github.com/marsade/locateip'>
+<a href='https://github.com/marsade/locateip/blob/main/app/main.py'>
    <img src='https://imgur.com/TkcDP7c.png'>
 </a>
+
 ## Contributing
+
 Pull requests are welcome. For major changes, please open an issue first
 to discuss what you would like to change.
 
