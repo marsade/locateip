@@ -62,6 +62,7 @@ def tracker():
 
 @app.route('/proxy', methods=['GET'])
 def proxy():
+    '''Proxy server'''
     url = request.args.get('url')
     if url:
         response = requests.get(url)
@@ -71,6 +72,7 @@ def proxy():
 
 @app.route('/extract_ip', methods=['POST'])
 def extract_ip():
+    ''' Extract Ip from user Input'''
     ip_address = ''
     domain_name = ''
 
@@ -106,6 +108,7 @@ def extract_ip():
 
 @app.route('/get_extracted_ip', methods=['GET'])
 def get_extracted_ip():
+    '''Get extractyed IP for validation'''
     # Assuming extracted IP address is not in a session variable
     extracted_ip = session.get('extracted_ip')
     extracted_domain = session.get('extracted_domain')

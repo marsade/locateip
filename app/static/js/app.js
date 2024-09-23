@@ -15,6 +15,7 @@ function fetchIPAddress() {
     }})
 };
 
+//Fetch and send the ipa address
 function FetchAndSendIpAddress(){
   fetch('/proxy?url=https://api.ipify.org?format=json')
         .then(response => response.json())
@@ -29,6 +30,7 @@ function FetchAndSendIpAddress(){
             console.error('Error fetching IP address:', error);
         });
 }
+
 // Function to send the IP address to the Flask backend
 function sendIPAddressToBackend(ipAddress) {
   const requestData = { ip_address: ipAddress };
@@ -54,7 +56,7 @@ function sendIPAddressToBackend(ipAddress) {
 }
 
 // Call the function to fetch the IP address when the page loads
-window.onload = fetchIPAddress;
+window.onload = FetchAndSendIpAddress;
 
 let lat = document.querySelector('.lat').innerHTML;
 let long = document.querySelector('.long').innerHTML;
